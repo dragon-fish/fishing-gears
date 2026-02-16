@@ -1,6 +1,12 @@
 export const useDeviceStore = defineStore('device', () => {
   const { width, height } = useWindowSize()
+
+  const forcedEmbedded = ref(false)
+
   const isEmbedded = computed(() => {
+    if (forcedEmbedded.value) {
+      return true
+    }
     // SSR
     if (typeof window === 'undefined') {
       return false
@@ -13,5 +19,6 @@ export const useDeviceStore = defineStore('device', () => {
     width,
     height,
     isEmbedded,
+    forcedEmbedded,
   }
 })

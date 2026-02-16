@@ -7,7 +7,7 @@
       |
       code ?data=&lt;json&gt;
 
-  #main(ref='containerEl')
+  #main(ref='containerEl', max-h-full, max-w-full)
     .stage
       .chart-box(:style='chartBoxStyle')
         .chart(ref='chartEl')
