@@ -277,7 +277,8 @@ function buildOption(input: RadarInput): EChartsCoreOption {
     title: input.title
       ? {
           text: input.title,
-          left: 'center',
+          top: '8px',
+          left: '8px',
         }
       : undefined,
     tooltip: {},
@@ -295,6 +296,9 @@ function buildOption(input: RadarInput): EChartsCoreOption {
             name: input.title ?? '',
           },
         ],
+        areaStyle: {
+          opacity: 0.6,
+        },
       },
     ],
   }
